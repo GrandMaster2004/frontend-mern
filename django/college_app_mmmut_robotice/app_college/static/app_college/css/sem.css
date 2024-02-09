@@ -1,0 +1,106 @@
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 7%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  /* background: transparent; */
+  box-shadow: 0 0.1rem var(--shadow-color);
+}
+
+.navbar a {
+  color: white;
+}
+.navbar a.active {
+  color: white;
+}
+#darkMode-icon {
+  color: white;
+  opacity: 0.9;
+}
+.footer {
+  display: none;
+}
+.semcontent{
+    margin-top: 90px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-top: 75px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #f1f1f1;
+  display: block;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.text_main{
+  font-size: 8rem;
+  color: aliceblue;
+  text-align: center;
+  padding: 5px;
+  text-shadow: 6px 6px 4px #333;
+  font-weight: 600;
+
+}
+.comment .card .user{
+  font-size: 15px;
+}
+.comment{
+  min-height: 50px;
+}
+.card-body .des{
+  font-size: 20px;
+}
+.first{
+  color: aliceblue;
+  font-size: large;
+}
+.first a{
+ margin-top: 20px;
+ background-color: aliceblue;
+ color: black;
+}
+.first a:hover{
+  color: aliceblue;
+  border-color: black;
+}
+.text_li{
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+  margin: 8px;
+  background-color: dimgrey;
+  border-radius: 25px;
+}
+ul{
+  text-align: none;
+  list-style: none;
+  display: flex;
+  font-size: 20px;
+  color: antiquewhite;
+  margin-top: 20%;
+  font-weight: 400;
+}

@@ -1,0 +1,188 @@
+{% extends 'app_college/base.html' %}
+
+  
+{% block 'title' %}home.html{% endblock %}
+{% block 'maincontent' %}
+{% load static %}
+  <style>
+    .probox{
+      cursor: pointer;
+
+    }
+    .box {
+      margin: 5px 0 5px 0;
+      }
+      @media (max-width: 768px) {
+  
+      .home .profession-container .profession-box {
+        animation: none;
+        
+      }
+    .probox{
+      opacity: 0;
+      
+    }
+  }
+  </style>
+    <section class="home" id="home">
+      <div class="home-content">
+        <h1>The Incognitos</h1>
+        <h3>MMMUT GORAKHPUR</h3>
+
+        <div class="social-media">
+          <a href="#" style="--i: 7"><i class="bx bxl-twitter"></i></a>
+          <a href="#" style="--i: 8"><i class="bx bxl-facebook-circle"></i></a>
+          <a href="#" style="--i: 9"><i class="bx bxl-linkedin"></i></a>
+          <a href="#" style="--i: 10"><i class="bx bxl-instagram"></i></a>
+        </div>
+
+      </div>
+
+      <div class="profession-container">
+        <div class="profession-box">
+          <div class="profession probox" id="first" style="--i: 0">
+
+            <h3>Employment</h3>
+          </div>
+          <div class="profession probox" id="second" style="--i: 1">
+
+            <h3>MentorShip</h3>
+          </div>
+          <div class="profession probox" id="therd" style="--i: 2">
+
+            <h3>FeedBack</h3>
+          </div>
+          <div class="profession probox" id="four" style="--i: 3">
+ 
+            <h3>DigitalHub</h3>
+          </div>
+          <div class="circle"></div>
+        </div>
+        <div class="overlay"></div>
+      </div>
+
+    </section>
+
+
+    <!-- About section design -->
+    <section class="" id="services">
+      <h2 class="heading"><span>About Us</span></h2>
+      <div class="services-container">
+
+        <div class="services-box box">
+          <i class='bx bxl-meta'></i>
+          <p>
+              Robotics club provides an opportunity for students to
+              supplement their education with hands-on experience in integration engineering.
+              From the past 12 years we engage our students with active participation in various
+              workshops, contests and tutorials to develop their interest in Robotics.
+          </p>
+        </div>
+        <div class="services-box box">
+          <i class="bx bx-code-alt"></i>
+  
+          <p>
+            The club carries forward its vision and ideas by continuously creating hotspots where
+             pool of technical knowledge meets via workshops and an annually organized event ROBOMANIA where 
+             the club members present events to the students which 
+            require plethora of practical implementation of concepts. Our Vision mainly is to:-
+          </p>
+        </div>
+        <div class="services-box box">
+          <i class="bx bx-code-alt"></i>
+          <p>
+            The Club offers indispensible guidance, workshops and tutorials along with tools, equipments, components and workspace. 
+            The family meets periodically to discuss over matters such as the management of the workspace, workshops, projects and competitions.
+             We welcome anyone, with or without prior knowledge, who wishes to be a part of this fraternity.
+          </p>
+        </div>
+        {% for i in mydata %}
+          <div class="services-box box">
+            <p>
+              {{i.text}}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+
+
+    <!-- testimonial design -->
+    <div class="testimonial-container">
+      <h2 class="heading">Important <span>Notice</span></h2>
+      <div class="testimonial-wrapper">
+        <div class="testimonial-box mySwiper">
+          <div class="testimonial-content swiper-wrapper">
+
+            {% for i in notice %}
+            <div class="testimonial-slide swiper-slide">
+              <img src="./media/{{i.image}}" alt="image" srcset="" >
+              <h3>{{i.title}}</h3>
+              <p>
+                {{i.description}}
+              </p>
+            </div>
+            {% endfor %}
+            <div class="testimonial-slide swiper-slide">
+              <img src="business.png" alt="" srcset="" />
+              <h3>Yash Vardhan</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                deserunt mollitia doloribus veniam velit aliquam voluptate
+                porro, corrupti placeat iure eum pariatur odio! Commodi, amet
+                voluptatum ut rerum ea molestias natus maxime quos odit non nam
+                recusandae id numquam officia corrupti! Eveniet odit quis
+                corporis ullam eos! Aliquid rerum, sint cupiditate nihil
+                expedita, ducimus iure provident illum distinctio placeat
+                reiciendis.
+              </p>
+            </div>
+            <div class="testimonial-slide swiper-slide">
+              <img src="business.png" alt="" srcset="" />
+              <h3>Yash Vardhan</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                deserunt mollitia doloribus veniam velit aliquam voluptate
+                porro, corrupti placeat iure eum pariatur odio! Commodi, amet
+                voluptatum ut rerum ea molestias natus maxime quos odit non nam
+                recusandae id numquam officia corrupti! Eveniet odit quis
+                corporis ullam eos! Aliquid rerum, sint cupiditate nihil
+                expedita, ducimus iure provident illum distinctio placeat
+                reiciendis.
+              </p>
+            </div>
+
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact</h2>
+      <form action="#" method="post">
+        {% csrf_token %}
+        <div class="input-box">
+          <input type="text" name="person" placeholder="Full Name" />
+          <input type="email" name="email" placeholder="Email Address" />
+        </div>
+        <div class="input-box">
+          <input type="number" name="number" placeholder="Mobile Number" />
+          <input type="text" name="subject" placeholder="Email Subject" />
+        </div>
+        <textarea
+          name="main_msm"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+        ></textarea>
+        <input type="submit" value="Send Message" class="btn1" />
+      </form>
+    </section>
+
+{% endblock %}

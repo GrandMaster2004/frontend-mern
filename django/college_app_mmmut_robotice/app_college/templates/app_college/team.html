@@ -1,0 +1,74 @@
+{% extends 'app_college/base.html' %}
+
+  
+{% block 'title' %}home.html{% endblock %}
+{% block 'maincontent' %}
+{% load static %}
+    <style>
+
+    .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 7%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    background: transparent;
+    box-shadow: 0 0.1rem var(--shadow-color);
+    }
+
+    .navbar a {
+    color: white;
+    }
+    .navbar a.active {
+    color: white;
+    }
+    #darkMode-icon {
+    color: white;
+    opacity: 0.9;
+    }
+    body{
+  
+        background-image: url("../static/app_college/images/bg6.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    .gallery_content{
+        margin-top: 7rem;
+    }
+    .link a{
+      margin: 1rem 0.25rem 1.5rem;
+    }
+    .portfolio-box img{
+      /* max-width: 50; */
+      max-height: 50vh;
+    }
+    </style>
+
+    <div class="gallery_content">
+        <section class="portfolio" id="portfolio">
+            <h2 class="heading">TEAM <span> MEMBERS</span></h2>
+            <div class="portfolio-container">
+
+              {% for i in data %}
+              <div class="portfolio-box">
+                <img src="/media/{{i.image_team}}" alt="images" />
+                <div class="portfolio-layer">
+                  <h4>{{i.team_name}}</h4>
+                  <h2>{{i.std_post}}</h2>
+                  <div class="link">
+                  <a href="{{facebook_link}}" target="_blank"><i class="bx bxl-facebook-circle"></i></a>
+                  <a href="{{linkedin_link}}"><i class="bx bxl-linkedin"></i></a>
+                  <a href="{{insta_link}}" ><i class="bx bxl-instagram"></i></a>
+                </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </section>
+    </div>
+{% endblock %}

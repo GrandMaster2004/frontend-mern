@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block 'title' %} {% endblock %}</title>
+    <link rel="stylesheet" href="../static/app_college/css/style.css" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+   
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Empowering Minds</a>
+      <nav class="navbar">
+        <a href="{% url 'home' %}">Login</a>
+
+        <a href="{% url 'sem' %}">Mentor</a>
+        <a href="{% url 'workshop' %}">DigitalHub</a>
+        <a href="{% url 'gallery' %}">Employment</a>
+        <a href="{% url 'team' %}">FeedBack</a>
+
+      </nav>
+      <div class="bx bx-moon" id="darkMode-icon"></div>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    {% block 'maincontent' %} {% endblock %}
+
+    <!-- footer design -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; The Incognitos MMMUT All rights reserved</p>
+      </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../static/app_college/js/index.js"></script>
+  </body>
+</html>

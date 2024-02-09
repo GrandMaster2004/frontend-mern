@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D model</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+         }
+         body{
+            height: 100vh;
+            background: dodgerblue;
+         }
+         .container{
+            height: 60vh;
+            width: 30vw;
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%,-50%);
+            perspective: 1000px;
+         }
+         .box{
+            height: 250px;
+            width: 250px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            /* transform: rotateY(130d eg); */
+            transform-style: preserve-3d;
+            animation: animate 5s infinite;  
+         }
+         @keyframes animate {
+            0%{
+                transform: rotateX(45deg) rotateY(-45deg);
+            }
+            25%{
+                transform: rotateX(-45deg) rotateY(-45deg);
+            }
+            50%{
+                transform: rotateX(45deg) rotateY(45deg);
+            }
+            75%{
+                transform: rotateX(-45deg) rotateY(45deg);
+            }
+            100%{
+                transform: rotateX(45deg) rotateY(-45deg);
+            }
+         }
+         .card{
+            height: 250px;
+            width: 250px;
+            text-align: center;
+            padding: 100px 0px;
+            color: wheat;
+            background: black;
+            border: 2px solid white;
+            font-size: 32px;
+            box-sizing: border-box;
+            position: absolute;
+            transition: all 1s;
+            /* transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s; */
+         }
+         #front{
+            transform: translateZ(125px);
+         }
+         #back{
+            transform: translateZ(-125px);
+         }
+         #left{
+            right: 125px;
+            transform: rotateY(-90deg);
+         }
+         #right{
+            left: 125px;
+            transform: rotateY(90deg);
+         }
+         #top{
+            bottom: 125px;
+            transform: rotateX(90deg);
+         }
+         #bottom{
+            top: 125px;
+            transform: rotateX(90deg);
+         }
+         input{
+            height: 50px;
+            width: 100px;
+            background: pink;
+            font-size: 22px;
+            cursor: pointer;
+            position: absolute;
+            top: -100px;
+            left: 175px;
+         }
+         input:focus~ .box #front{
+            transform: translateZ(180) rotateY(360deg);
+         }
+         input:focus~ .box #back{
+            transform: translateZ(-180) rotateY(360deg);
+         }
+         input:focus~ .box #left{
+            transform: rotate(90deg);
+            /* right: 180px; */
+         }
+         input:focus~ .box #right{
+            transform: rotate(90deg);
+            /* left: 180px; */
+         }
+         input:focus~ .box #top{
+            bottom: 180px;
+            
+         }
+         input:focus~ .box #bottom{
+            top: 180px;
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="button" value="HiteMe">
+        <div class="box">
+            <div class="card" id="front">Front</div>
+            <div class="card" id="back">Back</div>
+            <div class="card" id="left">left</div>
+            <div class="card" id="right">right</div>
+            <div class="card" id="top">top</div>
+            <div class="card" id="bottom">bottom</div>
+        </div>
+    </div>
+</body>
+</html>

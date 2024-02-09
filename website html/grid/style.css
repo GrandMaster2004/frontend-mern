@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+DULPG5795N
+.container{
+    /*grid container property*/
+    background-color: brown;
+    height: 500px;
+    border: 3px solid black;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr; /*repeat(3,1fr) */
+    grid-template-rows: repeat(3,1fr); /*repeat(3,1fr) */
+    gap: 30px;
+    /* grid-template-columns: 200px 200px 210px;
+    grid-template-rows: 90px 90px 90px 45px; */
+}
+
+.box{
+    background-color: aqua;
+    border: 3px solid pink;
+    /* height: 50px; */
+    /* width: 90px; */
+}
+
+#box1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#box5{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}

@@ -1,0 +1,112 @@
+{% extends 'app_college/base.html' %} 
+{% block 'title' %}home.html{% endblock %} 
+{% block 'maincontent' %} 
+{% load static %}
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 7%;
+    background: white;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    color: black;
+    box-shadow: 0 0.1rem var(--shadow-color);
+  }
+
+  .navbar a {
+    color: black;
+  }
+  .navbar a.active {
+    color: black;
+  }
+  body {
+    background-image: url("../static/app_college/images/bge2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: aliceblue;
+    background-attachment: fixed;
+  }
+
+  .container {
+    margin-top: 11rem;
+    padding: 1rem 19rem 1rem 19rem;
+  }
+  .container .box1 {
+    display: flex;
+  }
+  .box1 img {
+    max-width: 54rem;
+
+    margin-right: 6rem;
+  }
+  .para h1 {
+    font-size: 3rem;
+  }
+  .para p {
+    font-size: large;
+  }
+  .box1 {
+    margin: 4rem 0 4rem 0;
+  }
+  .line {
+    text-align: center;
+    font-size: 40px;
+  }
+  @media (max-width: 625px) {
+    html {
+      font-size: 25%;
+    }
+    .container .box1 {
+      display: block;
+    }
+    .line {
+    text-align: center;
+    font-size: 20px;
+  }
+  .para p{
+    font-size: 18px;
+  }
+  .para h1 {
+    font-size: 5rem;
+  }
+  .container{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  }
+</style>
+<div class="container">
+  <div class="main">
+    <h1 class="line">Web-Development Workshops</h1>
+    {% for i in web_data %}
+    <div class="box1">
+      <div class="img"><img src="/media/{{i.image_web}}" alt="img" /></div>
+      <div class="para">
+        <h1>
+          {{i.title}} <span> <a href="{{i.video_link}}">Video Link</a></span>
+        </h1>
+        <p>{{i.description}}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <h1 class="line">Circuitary Workshops</h1>
+  {% for i in cir_data %}
+  <div class="box1">
+    <div class="img"><img src="/media/{{i.image_web}}" alt="img" /></div>
+    <div class="para">
+      <h1>{{i.title}}<span> <a href="{{i.video_link}}"></a></span></h1>
+      <p>{{i.description}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'app_college/base.html' %}
+
+  
+{% block 'title' %}gallery.com{% endblock %}
+{% block 'maincontent' %}
+{% load static %}
+    <style>
+
+    .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 7%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    background: transparent;
+    box-shadow: 0 0.1rem var(--shadow-color);
+    }
+
+    .navbar a {
+    color: white;
+    }
+    .navbar a.active {
+    color: white;
+    }
+    #darkMode-icon {
+    color: white;
+    opacity: 0.9;
+    }
+    body{
+        background-image: url("../static/app_college/images/bg6.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    .gallery_content{
+        margin-top: 7rem;
+    }
+    .gallery_img{
+        max-width: 73rem;
+    }
+    /* .gallery_img{
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    } */
+
+    </style>
+
+    <div class="gallery_content">
+        <section class="services">
+            <div class="services-container">
+              {% for i in data %}
+              <div class="services-box" >
+                <img class="gallery_img"  src="/media/{{i.image_gallery}}" alt="image" srcset="">
+              </div>
+              {% endfor %}
+            </div>
+          </section>
+    </div>
+{% endblock %}

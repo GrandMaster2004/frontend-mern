@@ -1,0 +1,183 @@
+{% extends 'app_college/base.html' %} 
+{% block 'title' %}home.html{% endblock %} 
+{% block 'maincontent' %} 
+{% load static %}
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 7%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+  }
+  .navbar a {
+    color: white;
+  }
+  .navbar a.active {
+    color: white;
+  }
+  #darkMode-icon {
+    color: white;
+    opacity: 0.9;
+  }
+  .pimg1 {
+    background-image: url(/media/{{data.image_Event}});
+    min-height: 100vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .ptext {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    /* margin: 0 auto; */
+    color: balck;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+  }
+  .textBg {
+    background-color: #313534;
+    color: #fff;
+    padding: 20px;
+  }
+  .event_content{
+    background-image: url(../static/app_college/images/bge1.jpg);
+    min-height: 100vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .submain{
+    display: flex;
+    margin: 10px;
+  }
+  .submain img{
+    background-repeat: no-repeat;
+    max-width: 35vh;
+  }
+  .left{
+    text-shadow: 2px 4px black;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  .left p{
+    font-size: 25px;
+    color: #fff;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+
+  }
+  
+  .right h1{
+    color: #fff;
+    font-size: 30px;
+    background-color: #754ef9;
+    padding: 9px;
+    border-radius: 15px;
+  }
+
+  @media (max-width: 625px) {
+    html {
+      font-size: 50%;
+    }
+    .submain{
+    display: block;
+
+  }
+Employment
+Workshop
+DigitalHub
+
+    .submain img{
+      display: none;
+
+    }
+    .left{
+    text-shadow: 2px 4px black;
+    padding: 5px;
+  
+  }
+  .left p{
+    font-size: 15px;
+    color: #fff;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+    max-width: 90%;
+
+  }
+  .right h1{
+    color: #fff;
+    font-size: 10px;
+    background-color: #754ef9;
+
+  }
+  .btn{
+    max-width: 20rem;
+  }
+  .textBg{
+    font-size: 15px;
+  }
+  .main_title{
+    max-width: 100px;
+  }
+ 
+  }
+
+</style>
+
+<section class="pimg1">
+
+  <div class="ptext">
+    <span class="textBg">{{data.event_title}}</span>
+  </div>
+</section>
+
+<section class="event_content">
+    <div class="submain">
+        
+        <div class="right">
+            <h1 class="main_title">DESCRIPTION</h1>
+        </div>
+        <img src="../static/app_college/images/robot.gif" alt="" srcset="">
+        <div class="left">
+            <p>{{data.description}}</p>
+        </div>
+    </div>
+
+    <div class="submain">
+        
+        <div class="right">
+            <h1 class="main_title">FORMAT</h1>
+        </div>
+        <img src="../static/app_college/images/robot.gif" alt="" srcset="">
+        <div class="left">
+            <p>{{data.event_format}}</p>
+        </div>
+    </div>
+    <div class="submain">
+        
+        <div class="right">
+            <h1 class="main_title">SCHEDULE</h1>
+        </div>
+        <img src="../static/app_college/images/robot.gif" alt="" srcset="">
+        <div class="left">
+            <p>{{data.event_schedule}}</p>
+        </div>
+    </div>
+    <button class="btn">REGISTER NOW</button>
+</section>
+
+
+{% endblock %}

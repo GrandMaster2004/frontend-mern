@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dev_Detective</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="up_bar">
+        <h1>DevDetective</h1>
+        <div class="mode">
+          <h3 data-mode >Mode</h3>
+          <box-icon class="mode_icon" id="mode_icon" color="balck" name="moon"  data-icon></box-icon>
+          <box-icon type='solid' id="sun" class="mode_icon" color="white" name='sun' data-icon></box-icon>
+        </div>
+      </div>
+
+      <!-- input bar -->
+      <div class="input_class">
+        <box-icon class="search_icon" data-search_icon name="search-alt-2"></box-icon>
+        <input type="text" data-input placeholder="Enter a GitHub username" />
+        <button class="btn" type="button" data-btn>Search</button>
+      </div>
+
+      <!-- content start form here -->
+      <div class="content" id="content">
+        <div class="left">
+          <img class="images" src="" />
+        </div>
+        <div class="right">
+          <div class="name_info">
+            <div class="left_info">
+              <h2 data-name_user id="name"></h2>
+              <p data-username></p>
+            </div>
+            <div class="right_info">
+              <h5 data-joined id="joined"></h5>
+            </div>
+          </div>
+
+          <!-- discription -->
+          <h4 data-dec>
+          </h4>
+          <div class="extra_info" id="extra_info">
+            <div class="repo">
+              <h3>Repo</h3>
+              <p data-rep>11</p>
+            </div>
+            <div class="Followers">
+              <h3 >Followers</h3>
+              <p data-foll>11</p>
+            </div>
+            <div class="Following">
+              <h3 >Following</h3>
+              <p data-following>1</p>
+            </div>
+          </div>
+
+          <!-- location and other thing -->
+          <div class="bottom_info">
+            <div class="bottom_icon bot_info">
+            <box-icon type='solid' name='location-plus'></box-icon>
+              <h5 data-address></h5>
+            </div>
+            <div class="bottom_link bot_info">
+                <box-icon name='link' color='#red' ></box-icon>
+              <h5 data-linked></h5>
+            </div>
+            <div class="bottom_x bot_info">
+                <box-icon name='twitter' type='logo' color='black' ></box-icon>
+              <h5 data-twitter></h5>
+            </div>
+            <div class="bottom_flag bot_info">
+                <box-icon name='qr' color='black' ></box-icon>
+              <h5 data-qr></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  </body>
+</html>

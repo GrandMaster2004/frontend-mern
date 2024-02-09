@@ -1,0 +1,54 @@
+{% extends 'app_college/base.html' %} 
+{% block 'title' %}home.html{% endblock %}
+{% block 'maincontent' %} 
+{% load static %}
+<style>
+body{
+  background-image: url("../static/app_college/images/bg6.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+</style>
+<link rel="stylesheet" href="../static/app_college/css/sem.css" />
+
+
+<div class="semcontent">
+    <!-- Side navbar -->
+    <div class="sidenav">
+      {% for i in event %}
+      <a href="/event_show/{{i.event_id}}">{{i.event_title}}</a>
+      <!-- <a href="#">ELECTRO NFS</a>
+      <a href="#">BOMB DIFFUSION</a>
+      <a href="#">SHERLOCKED</a>
+      <a href="#">ELECTRONIC CHESS</a>
+      <a href="#">ELECTRONIC ART</a>
+      <a href="#">CLADDING THE CODE</a>
+      <a href="#">WEB QUEST</a> -->
+      {% endfor %}
+    </div>
+
+    <!-- Main content -->
+    <div style="margin-left: 200px; padding: 20px;">
+      
+      <h1 class="text_main">Our MentorShip</h1>
+      <section class="first">
+        <p>Mentorship programs are structured partnerships between an experienced staff member and a new employee. These programs aim to transfer knowledge, skills, experience, or a combination of these over a longer period of time and are based on trust 1. Mentorship programs have been found to be impactful in driving employee motivation and attracting and retaining candidates in the business. Organizations with mentoring programs in the workplace saw 57% higher employee engagement and retention 
+        </p>
+        <a class="btn1">Explore</a>
+        <ul>
+          <li class="text_li">Our Mentor</li>
+          <li class="text_li">Pre Recorded Videos</li>
+          <li class="text_li">Live Intereactive Session</li>
+        </ul>
+      </section>
+
+      <section>
+
+      </section>
+    </div>
+
+</div>
+
+{% endblock %}
